@@ -1,13 +1,10 @@
-fn first_word_len(s: &str) -> usize {
-    for (i, c) in s.chars().enumerate() {
-        if c == ' ' {
-            return i;
-        }
-    }
-    s.len()
+fn count_words(s:String){
+    let list = s.split_whitespace();
+    let counts = list.filter(|x|x.len()>3).count();
+    println!("{}", counts);
 }
 
-fn main() {
-    let s = "hello world";
-    println!("{}", first_word_len(s));
+fn main(){
+    let sentence:String = "the quick brown fox jumps over the lazy dog".to_string();
+    count_words(sentence);
 }
