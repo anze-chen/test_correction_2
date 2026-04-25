@@ -1,6 +1,9 @@
-fn main() {
-    let v1 = vec![1.0,2.0,3.0];
-    let v2 = vec![4.0,5.0,6.0];
-    let dp:f64 = v1.iter().zip(v2).map(|(v1,v2)|v1*v2).sum();
-    println! ("{}",dp);
+fn first_word_len(s:&str) -> (u32){
+    if s.contains(" "){
+        for i in 1.. = s.len(){
+            if s[i] == " "{
+                return (i);}
+        }
+    }
+    else {return s.len();}
 }
