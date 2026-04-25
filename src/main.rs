@@ -1,22 +1,24 @@
 struct StringBuilder{
-    c=content:String,
+    content: String,
 }
 
 impl StringBuilder{
     fn new() -> StringBuilder{
-        let c = StringBuilder("")
-        c}
-        ///Sorry, I don't remember why would I wrote a c in here. It doesn't make any sense to me right now.
+        StringBuilder{
+            content: String::new(),
+            }
+        }
+        
     fn add(&mut self, text:&str){
-            let new_string = self.push_str(text);
-            return new_string;
+            self.content.push_str(text);
         }
     fn build(&self) -> String{
-            let copy = self.clone();
-            return copy;}
+            self.content.clone()
         }
-fn main(){let word=""::StringBuilder::new();
-        let new_word = word::StringBuilder::add("Hello, ");
-        let new_word = new_word::StringBuilder::add("World!");
-        println!("{:?}",new_word);
-}
+    }
+fn main(){let mut word=StringBuilder::new();
+        word.add("Hello, ");
+        word.add("World!");
+
+        let new_word = word.build();
+        println!("{}",new_word);}
