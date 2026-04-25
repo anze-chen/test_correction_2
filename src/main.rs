@@ -1,10 +1,24 @@
-fn count_words(s:String){
-    let list = s.split_whitespace();
-    let counts = list.filter(|x|x.len()>3).count();
-    println!("{}", counts);
+struct StringBuilder{
+    content: String,
 }
 
-fn main(){
-    let sentence:String = "the quick brown fox jumps over the lazy dog".to_string();
-    count_words(sentence);
-}
+impl StringBuilder{
+    fn new() -> StringBuilder{
+        StringBuilder{
+            content: String::new(),
+            }
+        }
+        
+    fn add(&mut self, text:&str){
+            self.content.push_str(text);
+        }
+    fn build(&self) -> String{
+            self.content.clone()
+        }
+    }
+fn main(){let mut word=StringBuilder::new();
+        word.add("Hello, ");
+        word.add("World!");
+
+        let new_word = word.build();
+        println!("{}",new_word);}
