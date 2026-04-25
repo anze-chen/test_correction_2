@@ -1,9 +1,13 @@
-fn first_word_len(s:&str) -> (u32){
-    if s.contains(" "){
-        for i in 1.. = s.len(){
-            if s[i] == " "{
-                return (i);}
+fn first_word_len(s: &str) -> usize {
+    for (i, c) in s.chars().enumerate() {
+        if c == ' ' {
+            return i;
         }
     }
-    else {return s.len();}
+    s.len()
+}
+
+fn main() {
+    let s = "hello world";
+    println!("{}", first_word_len(s));
 }
