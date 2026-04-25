@@ -1,13 +1,6 @@
-fn safe_divide(a:f64,b:f64) -> Option<f64>{
-    match b{
-        0.0 => None,
-        _ => Some(a/b),
-    }
-}
-
-fn main(){
-    match safe_divide(10.0,24.0){
-        Some(result) => println!("Result: {}", result),
-        None => println!("Error: cannot divide by zero"),
-    }
+fn main() {
+    let v1 = vec![1.0,2.0,3.0];
+    let v2 = vec![4.0,5.0,6.0];
+    let dp:f64 = v1.iter().zip(v2).map(|(v1,v2)|v1*v2).sum();
+    println! ("{}",dp);
 }
